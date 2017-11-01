@@ -7,7 +7,16 @@
     distributed under the MIT license; see the "LICENSE" file.
 */
 
-#include "glk.h"
+#include <stdint.h>
+
+#define seekmode_Start (0)
+
+typedef void* strid_t;
+typedef int32_t glsi32;
+typedef uint32_t glui32;
+extern void glk_stream_set_position(strid_t str, glsi32 pos, glui32 seekmode);
+glui32 glk_get_buffer_stream(strid_t str, char *buf, glui32 len);
+
 #include "gi_blorb.h"
 
 #ifndef NULL
